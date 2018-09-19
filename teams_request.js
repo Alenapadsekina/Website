@@ -1,4 +1,4 @@
-let requestForTeams = new XMLHttprequestForTeams();
+let requestForTeams = new XMLHttpRequest();
 
 
 requestForTeams.open('GET', 'http://localhost:8888/getTeams', false);

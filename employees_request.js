@@ -1,27 +1,27 @@
-let request = new XMLHttpRequest();
+let requestEmployees = new XMLHttpRequest();
 
 
-request.open('GET', 'http://localhost:8888/getTeams', false);
+requestEmployees.open('GET', 'http://localhost:8888/getEmployees', false);
 //debugger;
-request.send();
+requestEmployees.send();
 
-if (request.status === 200) {
-    console.log(request.responseText);
-    let employees = JSON.parse(request.responseText);
-    populateTeamMembers(employees);
+if (requestEmployees.status === 200) {
+    console.log(requestEmployees.responseText);
+    let employees = JSON.parse(requestEmployees.responseText);
+    populateEmployeesDropdown(employees);
 };
 
-function populateTeamMembers(employees) {
+function populateEmployeesDropdown(employees) {
 
     let employeesDropdown = document.getElementById("teamMembers");
     while (employeesDropdown.firstChild) {
         employeesDropdown.removeChild(employeesDropdown.firstChild);
     }
 
-    for (let i = 0; i < teams.length; i++) {
+    for (let i = 0; i < employees.length; i++) {
         let option = document.createElement("option");
-        option.text = teams[i].team;
-        option.value = teams[i].id;
+        option.text = teamMembers[i].employee;
+        option.value = teamMembers[i].id;
         employeesDropdown.appendChild(option);
     }
 
