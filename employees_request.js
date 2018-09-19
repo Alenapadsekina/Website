@@ -20,11 +20,9 @@ function populateEmployeesDropdown(employees) {
 
     for (let i = 0; i < employees.length; i++) {
         let option = document.createElement("option");
-        option.text = teamMembers[i].employee;
-        option.value = teamMembers[i].id;
+        option.text = employees[i].employee;
+        option.value = employees[i].id;
         employeesDropdown.appendChild(option);
     }
-
-
 
 }
