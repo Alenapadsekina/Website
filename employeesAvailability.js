@@ -61,7 +61,7 @@ function populateTeamMembers() { //populate team members
     //return group;
 }
 
-function oneEmployeeAvailibility() {
+// function oneEmployeeAvailibility() {
     console.log("test passed");
     let group = defineTeamMembers();
     let table = document.getElementById("reportTable");
@@ -69,6 +69,27 @@ function oneEmployeeAvailibility() {
     let nameCell = row.insertCell(0);
     let statusCell = row.insertCell(1);
     nameCell.innerHTML = group.name;
+    let person = group.name.split(" ");
+        if (person[1].length % 2 == 0) {
+            statusCell.innerHTML = "Available";
+            statusCell.classList.add("available");
+        } else {
+            statusCell.innerHTML = "Not available";
+            statusCell.classList.add("notAvailable");
+        }
+
+    let headerRow = table.insertRow(0);
+    headerRow.innerHTML = "Employee's availability";
+    headerRow.classList.add("headerRow");
+}
+
+function oneEmployeeAvailibility() {
+    console.log("test passed");
+    let table = document.getElementById("reportTable");
+    let row = table.insertRow(0);
+    let nameCell = row.insertCell(0);
+    let statusCell = row.insertCell(1);
+    nameCell.innerHTML = getElementById("reportTable");
     let person = group.name.split(" ");
         if (person[1].length % 2 == 0) {
             statusCell.innerHTML = "Available";
