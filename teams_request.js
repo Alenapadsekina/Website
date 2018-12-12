@@ -17,7 +17,10 @@ function populateTeamsDropdown(teams) {
     while (teamsDropdown.firstChild) {
         teamsDropdown.removeChild(teamsDropdown.firstChild);
     }
-
+    let defaultTeamsOption = document.createElement("option");
+    defaultTeamsOption.text = "";
+    defaultTeamsOption.value = null;
+    teamsDropdown.appendChild(defaultTeamsOption);
     for (let i = 0; i < teams.length; i++) {
         let option = document.createElement("option");
         option.text = teams[i].team;
